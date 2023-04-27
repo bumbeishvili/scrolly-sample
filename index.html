@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        !function (e, n) { "object" == typeof exports && "undefined" != typeof module ? module.exports = n() : "function" == typeof define && define.amd ? define(n) : e.uos = n() }(this, function () { var e = []; function n() { for (var n, t, o = e.length; o--;)t = (n = e[o])[1] <= 1 ? (pageYOffset / (document.body.scrollHeight - innerHeight) - n[0]) / (n[1] - n[0]) : (pageYOffset - n[0]) / (n[1] - n[0]), n[2](t < 0 ? 0 : t > 1 ? 1 : t) } return function (t, o, f) { var i = e.push([t, o, f]); return i > 1 || addEventListener("scroll", n), function (t) { e.splice(i - 1, 1), t && removeEventListener("scroll", n) } } });
+    </script>
+
+</head>
+
+<body>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script> -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+
+    <style>
+        body {
+            padding: 40px;
+            background-color: #fafafa;
+            color: gray;
+            font-family: Helvetica
+        }
+    </style>
+
+    <div class="scrollContent">
+        <h1 style="">Time - from learning to Job</h1>
+        <div style="margin-bottom:40px">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec gravida nibh, nec sollicitudin purus.
+            Quisque sit amet rhoncus quam. Nam venenatis est ante, ac finibus velit pretium quis. Sed vel lectus
+            fringilla, tincidunt tortor non, egestas purus. Aliquam pellentesque dolor libero, in feugiat ex consectetur
+            quis. Pellentesque ac viverra velit, vestibulum lobortis metus. Nunc rutrum rhoncus leo, vitae finibus nibh
+            euismod ac. Proin dui tortor, gravida mattis nunc non, luctus convallis elit. Cras mollis, ligula in laoreet
+            semper, velit arcu convallis dui, in cursus ex elit vitae justo. In viverra ipsum ut augue hendrerit, ac
+            porta ipsum convallis. Duis ac pulvinar ligula.
+            </br></br>
+            In interdum sapien metus, ut sodales nunc pulvinar ac. Etiam id massa suscipit, vulputate diam porttitor,
+            luctus massa. Pellentesque neque libero, malesuada id aliquam non, bibendum id metus. Vivamus sed nisl vel
+            nisl varius tristique et ac nibh. Mauris tristique sed lacus vel finibus. Quisque metus nunc, pharetra eget
+            ultricies sit amet, porttitor sit amet nisl. Suspendisse aliquam urna mauris, vel luctus sapien congue
+            vitae. Proin sit amet purus eros. Integer aliquam metus at enim bibendum aliquam. Phasellus non laoreet
+            ipsum. Quisque non dapibus enim. Duis a metus non quam efficitur venenatis eget at quam.
+            </br></br>
+            Praesent maximus rhoncus lobortis. Suspendisse id imperdiet erat. Cras sit amet libero mattis, sagittis
+            turpis eget, scelerisque lectus. Sed ac malesuada justo. Cras et odio nisl. Integer tristique elementum
+            fermentum. Integer enim ex, varius a fermentum ut, accumsan id tellus. Vestibulum ornare imperdiet augue,
+            sed tincidunt lacus congue in. Nulla facilisi. Phasellus elementum erat vel diam luctus ultricies.
+            Pellentesque eget laoreet est. Donec sit amet ante varius, vehicula leo vel, imperdiet leo. Sed dignissim
+            vitae lorem id malesuada. Nunc dapibus tempus ultricies.
+        </div>
+        <section id="titlechart">
+            <!-- <script>
+                // init controller
+                var controller = new ScrollMagic.Controller();
+            </script> -->
+        </section>
+
+        <section class="demo" style="position:relative">
+
+
+            <div id="trigger1">
+                TRIGGER
+            </div>
+
+            <div style="background-color:red; z-index:10; padding-top:30vh; height:600px; width:600px;position:relative"
+                id="pin1">
+                test
+                <div class='chart-container' style="padding-top:180px">
+
+                </div>
+            </div>
+
+            <div style="background-color:green; margin-top:-500px; height:300vh; width:100%;">
+                <div style="display:flex;justify-content:flex-end;height:100vh; align-items:flex-end">
+                    <div style="max-width:150px"> <b>Data 2019 </b><br><br> Most starting new job within year</div>
+                </div>
+                <div style="display:flex;justify-content:flex-end;height:100vh;align-items:flex-end">
+                    <div style="max-width:150px"> <b>Data 2020 </b><br><br> Finding Job became complex</div>
+                </div>
+                <div style="display:flex;justify-content:flex-end;height:100vh;align-items:flex-end">
+                    <div style="max-width:150px"> <b>Data 2021 </b><br><br>Have doctors switched to programming?</div>
+                </div>
+
+            </div>
+
+
+            <script>
+                const stepData = {
+                    1: [
+                        { key: '1 წელი', value: 193 },
+                        { key: '2 წელი', value: 119 },
+                        { key: '3 წელი', value: 43 },
+                        { key: '4 წელი', value: 23 },
+                        { key: '4-6 წელი', value: 8 },
+                        { key: '6-9 წელი', value: 3 },
+                    ],
+                    2: [
+                        { key: '3 თვე', value: 1 },
+                        { key: '1 წელი', value: 193 },
+                        { key: '2 წელი', value: 193 },
+                        { key: '3 წელი', value: 43 },
+                        { key: '4 წელი', value: 23 },
+                        { key: '5 წელი', value: 8 },
+                        { key: '6-9 წელი', value: 3 },
+                    ],
+                    3: [
+                        { key: '3 თვე', value: 1 },
+                        { key: '1 წელი', value: 300 },
+                        { key: '2 წელი', value: 193 },
+                        { key: '4 წელი', value: 23 },
+                        { key: '5 წელი', value: 8 },
+                        { key: '6-9 წელი', value: 200 },
+                    ]
+                };
+
+                // let lastStep = 0;
+
+                // (function () {
+                //     // wait for document ready
+                //     // build scene
+                //     var scene1 = new ScrollMagic.Scene({
+                //         triggerElement: '#trigger1',
+                //         duration: window.innerHeight * 3,
+                //         offset: window.innerHeight / 2
+                //     })
+                //         .setPin('#pin1')
+                //         .on("update", function (e) {
+                //             console.log('scrolldirection', e.target.controller().info("scrollDirection"));
+                //         })
+                //         .on("enter leave", function (e) {
+                //             console.log('scrolldirection', e.type == "enter" ? "inside" : "outside");
+
+                //         })
+                //         .on("start end", function (e) {
+                //             console.log('lastHit', e.type == "start" ? "top" : "bottom");
+                //         })
+                //         .on("progress", function (e) {
+                //             let currentStep = Math.floor(e.progress * 3 + 1)
+                //             if (lastStep != currentStep) {
+                //                 BarChartD3(stepData[currentStep], '.chart-container')
+                //                 lastStep = currentStep;
+
+                //             }
+                //             console.log('progress', currentStep, e.progress.toFixed(3));
+                //         })
+                //         //.addIndicators({ name: '(duration: ' + window.innerHeight * 3 + ')' }) // add indicators (requires plugin)
+                //         .addTo(controller);
+
+
+                // })();
+            </script>
+        </section>
+
+        <div style="padding-top:0px;">
+            </br></br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec gravida nibh, nec sollicitudin purus.
+            Quisque sit amet rhoncus quam. Nam venenatis est ante, ac finibus velit pretium quis. Sed vel lectus
+            fringilla, tincidunt tortor non, egestas purus. Aliquam pellentesque dolor libero, in feugiat ex consectetur
+            quis. Pellentesque ac viverra velit, vestibulum lobortis metus. Nunc rutrum rhoncus leo, vitae finibus nibh
+            euismod ac. Proin dui tortor, gravida mattis nunc non, luctus convallis elit. Cras mollis, ligula in laoreet
+            semper, velit arcu convallis dui, in cursus ex elit vitae justo. In viverra ipsum ut augue hendrerit, ac
+            porta ipsum convallis. Duis ac pulvinar ligula.
+            </br></br>
+            In interdum sapien metus, ut sodales nunc pulvinar ac. Etiam id massa suscipit, vulputate diam porttitor,
+            luctus massa. Pellentesque neque libero, malesuada id aliquam non, bibendum id metus. Vivamus sed nisl vel
+            nisl varius tristique et ac nibh. Mauris tristique sed lacus vel finibus. Quisque metus nunc, pharetra eget
+            ultricies sit amet, porttitor sit amet nisl. Suspendisse aliquam urna mauris, vel luctus sapien congue
+            vitae. Proin sit amet purus eros. Integer aliquam metus at enim bibendum aliquam. Phasellus non laoreet
+            ipsum. Quisque non dapibus enim. Duis a metus non quam efficitur venenatis eget at quam.
+            </br></br>
+            Praesent maximus rhoncus lobortis. Suspendisse id imperdiet erat. Cras sit amet libero mattis, sagittis
+            turpis eget, scelerisque lectus. Sed ac malesuada justo. Cras et odio nisl. Integer tristique elementum
+            fermentum. Integer enim ex, varius a fermentum ut, accumsan id tellus. Vestibulum ornare imperdiet augue,
+            sed tincidunt lacus congue in. Nulla facilisi. Phasellus elementum erat vel diam luctus ultricies.
+            Pellentesque eget laoreet est. Donec sit amet ante varius, vehicula leo vel, imperdiet leo. Sed dignissim
+            vitae lorem id malesuada. Nunc dapibus tempus ultricies.
+        </div>
+        <div style="padding-top:0px;">
+            </br></br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec gravida nibh, nec sollicitudin purus.
+            Quisque sit amet rhoncus quam. Nam venenatis est ante, ac finibus velit pretium quis. Sed vel lectus
+            fringilla, tincidunt tortor non, egestas purus. Aliquam pellentesque dolor libero, in feugiat ex consectetur
+            quis. Pellentesque ac viverra velit, vestibulum lobortis metus. Nunc rutrum rhoncus leo, vitae finibus nibh
+            euismod ac. Proin dui tortor, gravida mattis nunc non, luctus convallis elit. Cras mollis, ligula in laoreet
+            semper, velit arcu convallis dui, in cursus ex elit vitae justo. In viverra ipsum ut augue hendrerit, ac
+            porta ipsum convallis. Duis ac pulvinar ligula.
+            </br></br>
+            In interdum sapien metus, ut sodales nunc pulvinar ac. Etiam id massa suscipit, vulputate diam porttitor,
+            luctus massa. Pellentesque neque libero, malesuada id aliquam non, bibendum id metus. Vivamus sed nisl vel
+            nisl varius tristique et ac nibh. Mauris tristique sed lacus vel finibus. Quisque metus nunc, pharetra eget
+            ultricies sit amet, porttitor sit amet nisl. Suspendisse aliquam urna mauris, vel luctus sapien congue
+            vitae. Proin sit amet purus eros. Integer aliquam metus at enim bibendum aliquam. Phasellus non laoreet
+            ipsum. Quisque non dapibus enim. Duis a metus non quam efficitur venenatis eget at quam.
+            </br></br>
+            Praesent maximus rhoncus lobortis. Suspendisse id imperdiet erat. Cras sit amet libero mattis, sagittis
+            turpis eget, scelerisque lectus. Sed ac malesuada justo. Cras et odio nisl. Integer tristique elementum
+            fermentum. Integer enim ex, varius a fermentum ut, accumsan id tellus. Vestibulum ornare imperdiet augue,
+            sed tincidunt lacus congue in. Nulla facilisi. Phasellus elementum erat vel diam luctus ultricies.
+            Pellentesque eget laoreet est. Donec sit amet ante varius, vehicula leo vel, imperdiet leo. Sed dignissim
+            vitae lorem id malesuada. Nunc dapibus tempus ultricies.
+        </div>
+        <div style="padding-top:0px;">
+            </br></br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec gravida nibh, nec sollicitudin purus.
+            Quisque sit amet rhoncus quam. Nam venenatis est ante, ac finibus velit pretium quis. Sed vel lectus
+            fringilla, tincidunt tortor non, egestas purus. Aliquam pellentesque dolor libero, in feugiat ex consectetur
+            quis. Pellentesque ac viverra velit, vestibulum lobortis metus. Nunc rutrum rhoncus leo, vitae finibus nibh
+            euismod ac. Proin dui tortor, gravida mattis nunc non, luctus convallis elit. Cras mollis, ligula in laoreet
+            semper, velit arcu convallis dui, in cursus ex elit vitae justo. In viverra ipsum ut augue hendrerit, ac
+            porta ipsum convallis. Duis ac pulvinar ligula.
+            </br></br> ac. Etiam id massa suscipit, vulputate diam porttitor,
+            luctus massa. Pellentesque neque libero, malesuada id aliquam non, bibendum id metus. Vivamus sed nisl vel
+            nisl varius tristique et ac nibh. Mauris tristique sed lacus vel finibus. Quisque metus nunc, pharetra eget
+            ultricies sit amet, porttitor sit amet nisl. Suspendisse aliquam urna mauris, vel luctus sapien congue
+            vitae. Proin sit amet purus eros. Integer aliquam metus at enim bibendum aliquam. Phasellus non laoreet
+            ipsum. Quisque non dapibus enim. Duis a metus non quam efficitur venenatis eget at quam.
+            </br></br>
+            Praesent maximus rhoncus lobortis. Suspendisse id imperdiet erat. Cras sit amet libero mattis, sagittis
+            turpis eget, scelerisque lectus. Sed ac malesuada justo. Cras et odio nisl. Integer tristique elementum
+            fermentum. Integer enim ex, varius a fermentum ut, accumsan id tellus. Vestibulum ornare imperdiet augue,
+            sed tincidunt lacus congue in. Nulla facilisi. Phasellus elementum erat vel diam luctus ultricies.
+            Pellentesque eget laoreet est. Donec sit amet ante varius, vehicula leo vel, imperdiet leo. Sed dignissim
+            vitae lorem id malesuada. Nunc dapibus tempus ultricies.
+        </div>
+
+
+    </div>
+
+
+    <script>
+
+        BarChartD3([], '.chart-container')
+        function BarChartD3(data, appDiv) {
+            // Create elements
+            const sum = d3.sum(data, (d) => d.value);
+
+            const firstDraw = !!d3.select(appDiv).select('svg').node();
+
+            const svg = d3
+                .select(appDiv)
+                .selectAll('svg')
+                .data([1])
+                .join('svg')
+                .attr('width', 300)
+                .attr('height', 500)
+                .style('margin-top', 40)
+                .style('border-radius', 20 + 'px');
+
+            let gInitial = svg.selectAll('g.row').data(data, (d) => d.key);
+
+            const gEnter = gInitial.enter().append('g');
+
+            const gExit = gInitial.exit();
+            const g = gEnter.merge(gInitial);
+
+            g.attr('class', 'row');
+
+            gExit
+                .transition()
+                .duration(200)
+                .attr('transform', (d, i, arr) => `translate(-1000,${10 + 25 * i})`)
+                .on('end', function () {
+                    d3.select(this).remove();
+                });
+
+            gEnter.attr('transform', (d, i, arr) => `translate(1000,${10 + 25 * i})`);
+
+            g.transition()
+                .duration(400)
+                .attr('transform', (d, i, arr) => `translate(10,${10 + 25 * i})`);
+
+            g.selectAll('text.keys')
+                .data((d) => [d])
+                .join('text')
+                .text((d) => d.key)
+                .attr('class', 'keys')
+                .attr('y', 16)
+                .attr('text-anchor', 'end')
+                .attr('x', 80);
+
+            const max = d3.max(data, (d) => d.value);
+
+            const scale = d3.scaleLinear().domain([0, max]).range([0, 150]);
+
+            g.selectAll('rect.bars')
+                .data((d) => [d])
+                .join('rect')
+                .attr('class', 'bars')
+                .attr('height', 20)
+                .attr('fill', 'darkblue')
+                .attr('x', 90)
+                .transition()
+                .duration(400)
+                .delay((d, i, arr) => 400 + i * 100)
+                .attr('width', (d) => scale(d.value));
+
+            g.selectAll('text.percents')
+                .data((d) => [d])
+                .join('text')
+                .attr('class', 'percents')
+                .text((d) => {
+                    const p = Math.round((d.value / sum) * 100 * 10) / 10;
+                    return p + '%';
+                })
+                .attr('font-size', 11)
+                .attr('y', 16)
+                .attr('x', function () {
+                    const current = d3.select(this).attr('x');
+                    return current || 95;
+                })
+                .transition()
+                .duration(400)
+                .delay((d, i, arr) => 400 + i * 100)
+                .attr('x', (d) => 90 + scale(d.value) + 5);
+        }
+
+
+    </script>
+
+
+    <script>
+        let lastStep = 0;
+        uos(document.querySelector('#trigger1').getBoundingClientRect().top,
+            document.querySelector('#trigger1').getBoundingClientRect().top + window.innerHeight * 3,
+            progress => {
+                let currentStep = Math.floor(progress * 3 + 1)
+                console.log({ currentStep, progress })
+                console.log('progress', progress)
+                if (currentStep > 3) {
+                    currentStep = 3;
+                }
+                if (progress > 0) {
+                    console.log('setting sticky')
+                    d3.select('#pin1')
+                        .style('top', 0 + 'px')
+                        .style('position', 'sticky')
+
+
+                }
+
+                if (lastStep != currentStep) {
+                    BarChartD3(stepData[currentStep], '.chart-container')
+                    lastStep = currentStep;
+
+                }
+                // Progress between 100px and 500px
+            });
+    </script>
+
+</body>
+
+</html>
